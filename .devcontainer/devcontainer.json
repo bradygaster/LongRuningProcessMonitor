@@ -9,6 +9,5 @@
       "ms-kubernetes-tools.vscode-aks-tools",
       "redhat.vscode-yaml",
       "ms-vscode.azurecli"
-    ],
-    "postCreateCommand": "/bin/bash ./.devcontainer/setup.sh > ~/workspace/setup.log"
+    ]
 }
