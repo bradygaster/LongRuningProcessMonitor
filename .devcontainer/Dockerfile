@@ -19,7 +19,7 @@ ARG NODE_VERSION="lts/*"
 ENV NVM_DIR=/home/vscode/.nvm
 
 # [Optional] Install the Azure CLI
-ARG INSTALL_AZURE_CLI="false"
+ARG INSTALL_AZURE_CLI="true"
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
