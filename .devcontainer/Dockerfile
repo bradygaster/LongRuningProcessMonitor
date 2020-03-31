@@ -13,6 +13,9 @@ ARG USERNAME=root
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+ARG BASH_PROMPT="PS1='\[\e]0;\u: \w\a\]\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
+ENV SHELL=/bin/bash
+
 # [Optional] Version of Node.js to install.
 ARG INSTALL_NODE="true"
 ARG NODE_VERSION="lts/*"
@@ -40,6 +43,7 @@ RUN apt-get update \
     # && chmod 0440 /etc/sudoers.d/$USERNAME \
     #
     #
+    && { echo && echo $BASH_PROMPT ; } | tee -a /etc/bash.bashrc >> /etc/skel/.bashrc \
     # [Optional] Install the Azure CLI
     && if [ "$INSTALL_AZURE_CLI" = "true" ]; then \
         echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/azure-cli.list \
