@@ -1,4 +1,5 @@
 {
+  "dockerFile": "Dockerfile",
     "extensions": [
       "ms-vscode.csharp",
       "formulahendry.dotnet-test-explorer",
@@ -9,5 +10,8 @@
       "ms-kubernetes-tools.vscode-aks-tools",
       "redhat.vscode-yaml",
       "ms-vscode.azurecli"
-    ]
+    ],
+  "settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
 }
